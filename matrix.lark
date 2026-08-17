@@ -1,0 +1,41 @@
+// a0 = 0
+// a1 = a2 + a3
+// a5 = a6 / (a3 - a4)
+
+?start: (swap | scale | add_row | sub_row | substitution)*
+
+swap: "swap" "(" NUMBER "," NUMBER ")" -> swap_rows 
+
+scale: "scale" "(" NUMBER "," sum ")" -> scale_row
+    
+add_row: "add" "(" NUMBER "," NUMBER ")" -> add_row
+
+sub_row: "sub" "(" NUMBER "," NUMBER ")" -> sub_row
+
+substitution: VARNAME "=" sum -> assign_var
+
+?sum: product
+    | sum "+" product   -> add
+    | sum "-" product   -> sub
+
+?product: atom
+    | product "*" atom  -> mul
+    | product "/" atom  -> div
+
+?atom: NUMBER           -> number
+        | atom "**" atom  -> pow
+        | "-" atom         -> neg
+        | VARNAME             -> var
+        | "(" sum ")"
+
+
+VARNAME : LETTER+ DIGIT*
+
+%import common.NEWLINE
+%import common.LETTER
+%import common.DIGIT
+%import common.NUMBER
+%import common.WS_INLINE
+
+%ignore WS_INLINE
+%ignore NEWLINE
