@@ -43,7 +43,7 @@ matrix_2_3 = Matrix([[Bs[3],Bs[6],Bs[9]],
 
 
 matrix_2_5 = Matrix([[Bs[3],Bs[6]+Bs[9]],
-                    [Bs[0]+Bs[7]+Bs[10]+Cs[0],-Bs[10]],
+                    [Bs[0]+Bs[7]+Bs[10]+Cs[0],-Bs[7]-Bs[10]],
                     [-Bs[4],Bs[1]+Bs[4]+Cs[0]],
                     [-Bs[5],Bs[2]+Bs[5]+Cs[0]]])
 
