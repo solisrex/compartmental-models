@@ -53,7 +53,7 @@ for k in [1,2]:
 
 elim_vars = [X1 == 0, X2 == 0, X3 == 0]
 
-eqns = [difference_numerator.subs(elim_vars)]
+eqns = [difference_numerator.subs(elim_vars) == 0]
 
 for power in powers:
     monomial = form_monomial(dependent_vars,power)
