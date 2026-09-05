@@ -59,4 +59,3 @@ for power in powers:
 
     eqns += [derivative_coefficient - product_coefficient == 0]
 
-print(eqns)
