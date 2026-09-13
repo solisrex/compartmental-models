@@ -1,3 +1,5 @@
+# These Darboux polynomials were created with some help from ChatGPT.
+
 initialized_darbouxs = []
 
 def log_init(init_function):
