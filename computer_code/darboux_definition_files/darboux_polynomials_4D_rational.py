@@ -380,6 +380,3 @@ darboux_41 = DarbouxPolynomial(
     [(1)*X1 + (-(Bs[1] + Bs[11])/Bs[4])*X2 + (0)*X3 + (1)*X4],
     (-As[3])*X3/(X1 + X2 + X3),
 )
-
-for darboux in initialized_darbouxs:
-    print(darboux.name,check_darboux(darboux))
