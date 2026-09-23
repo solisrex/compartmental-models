@@ -58,4 +58,4 @@ eqns = [difference_numerator.subs(elim_vars) == 0]
 for power in powers:
     monomial = form_monomial(dependent_vars,power)
 
-    eqns += [difference_numerator.coefficient(monomial).subs(elim_vars) == 0]
+    eqns += [expand(difference_numerator).coefficient(monomial).subs(elim_vars) == 0]
