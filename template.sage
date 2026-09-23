@@ -54,8 +54,8 @@ eqns = [darboux_dot.subs(elim_vars) - product.subs(elim_vars) == 0]
 for power in powers:
     monomial = form_monomial(dependent_vars,power)
 
-    derivative_coefficient = darboux_dot.coefficient(monomial).subs(elim_vars)
-    product_coefficient = product.coefficient(monomial).subs(elim_vars)
+    derivative_coefficient = expand(darboux_dot).coefficient(monomial).subs(elim_vars)
+    product_coefficient = expand(product).coefficient(monomial).subs(elim_vars)
 
     eqns += [derivative_coefficient - product_coefficient == 0]
 
